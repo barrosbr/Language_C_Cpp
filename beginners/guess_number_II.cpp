@@ -35,7 +35,7 @@ int main() {
     int nTry = 0; // number of tries
     int system(const char *command); // for run commands in terminal
     
-    system("clear"); // run 'clear' command in terminal
+    system("clear"); // run 'clear' command in linux terminal. For windows change to: system("cls")
     printf("*******************************************************\n");
     printf("************  GUESS THE NUMBER IF YOU CAN! ************\n");
     printf("*******************************************************\n\n");
@@ -43,7 +43,6 @@ int main() {
     
     srand(time(0)); // ensures that the number generated is different each time the program is run 
     magic = rand() % 100 + 1; // generates a random number between 1 and 100     
-    printf("%d\n", magic);
 
     while (true){
 
@@ -58,7 +57,7 @@ int main() {
 
         if(guess == magic){ 
             gotRight();
-            printf("*** You got it right! Number of attempts: %d ***\n", nTry);
+            printf("Number of tries: %d\n", nTry);
             break;
         }
         else if (guess < (magic - 10) )
