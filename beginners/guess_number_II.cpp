@@ -28,6 +28,15 @@ void gotRight(){
     printf("\n");
 }
 
+void wellcome(){
+    
+    system("clear"); // run 'clear' command in linux terminal. For windows change to: system("cls")
+    printf("*******************************************************\n");
+    printf("************  GUESS THE NUMBER IF YOU CAN! ************\n");
+    printf("*******************************************************\n\n");
+
+}
+
 int main() {
 
     int magic; // number to guess
@@ -35,18 +44,13 @@ int main() {
     int nTry = 0; // number of tries
     int system(const char *command); // for run commands in terminal
     
-    system("clear"); // run 'clear' command in linux terminal. For windows change to: system("cls")
-    printf("*******************************************************\n");
-    printf("************  GUESS THE NUMBER IF YOU CAN! ************\n");
-    printf("*******************************************************\n\n");
-
+    wellcome();
     
     srand(time(0)); // ensures that the number generated is different each time the program is run 
     magic = rand() % 100 + 1; // generates a random number between 1 and 100     
 
     while (true){
 
-        nTry++;
         printf("Guess a number between 1 and 100 (999 to exit): ");
         scanf("%d", &guess);
 
@@ -54,7 +58,8 @@ int main() {
             printf("The number is: %d, you gave up after %d tries, bye!\n", magic, nTry);
             break;
         }
-
+        
+        nTry++;
         if(guess == magic){ 
             gotRight();
             printf("Number of tries: %d\n", nTry);
