@@ -30,7 +30,7 @@ void gotRight(){
 
 void wellcome(){
     
-    system("cls"); // run 'cls' command in windows terminal. For lixux change to: system("clear")
+    system("cls"); // run 'cls' command in windows terminal. For linux change to: system("clear")
     printf("*******************************************************\n");
     printf("************  GUESS THE NUMBER IF YOU CAN! ************\n");
     printf("*******************************************************\n\n");
@@ -42,6 +42,7 @@ int main() {
     int magic; // number to guess
     int guess; // user's guess
     int nTry = 0; // number of tries
+    char ch;
     int system(const char *command); // for run commands in terminal
     
     wellcome();
@@ -56,6 +57,7 @@ int main() {
 
         if (guess == 999){
             printf("The number is: %d, you gave up after %d tries, bye!\n", magic, nTry);
+            printf("Press any key to exit.\n");
             break;
         }
         
@@ -75,4 +77,5 @@ int main() {
             printf("This number is bigger, you are close.\n");
 
     }
+    getchar();
 }

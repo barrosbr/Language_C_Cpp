@@ -56,13 +56,15 @@ int main() {
 
         if (guess == 999){
             printf("The number is: %d, you gave up after %d tries, bye!\n", magic, nTry);
+            printf("Press any key to exit.\n");
             break;
         }
-        
+
         nTry++;
         if(guess == magic){ 
             gotRight();
             printf("Number of tries: %d\n", nTry);
+            printf("Press any key to exit.\n");
             break;
         }
         else if (guess < (magic - 10) )
@@ -75,4 +77,5 @@ int main() {
             printf("This number is bigger, you are close.\n");
 
     }
+    getchar();
 }
